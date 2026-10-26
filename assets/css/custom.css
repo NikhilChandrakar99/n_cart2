@@ -1,0 +1,472 @@
+/*
+ * N_cart eCommerce Custom Styles
+ * Enhances UI with modern micro-animations, cart drawer, toast notifications,
+ * quick-view modal, skeleton states, and checkout confirmation.
+ */
+
+:root {
+  --nc-primary: #59ab6e;
+  --nc-primary-hover: #488f5b;
+  --nc-dark: #212934;
+  --nc-light: #f8f9fa;
+  --nc-border: #e9ecef;
+  --nc-danger: #e63946;
+  --nc-warning: #ffb703;
+  --nc-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --nc-shadow-md: 0 6px 16px rgba(0, 0, 0, 0.12);
+  --nc-shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.16);
+  --nc-radius: 8px;
+  --nc-transition: all 0.25s ease-in-out;
+}
+
+/* ==========================================================================
+   Interactive Product Cards
+   ========================================================================== */
+.product-wap {
+  transition: var(--nc-transition);
+  border: 1px solid var(--nc-border) !important;
+  border-radius: var(--nc-radius) !important;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.product-wap:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--nc-shadow-md);
+  border-color: rgba(89, 171, 110, 0.4) !important;
+}
+
+.product-wap .card-img {
+  object-fit: cover;
+  height: 280px;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.product-wap:hover .card-img {
+  transform: scale(1.04);
+}
+
+.product-overlay {
+  background: rgba(33, 41, 52, 0.45) !important;
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: var(--nc-transition);
+}
+
+.product-wap:hover .product-overlay {
+  opacity: 1;
+}
+
+.product-overlay ul li a {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% !important;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.product-overlay ul li a:hover {
+  transform: scale(1.12);
+}
+
+.product-overlay .btn-wishlist.active i,
+.btn-wishlist.active i {
+  color: #ff3366 !important;
+  font-weight: 900 !important;
+}
+
+/* ==========================================================================
+   Navbar Badges & Interactive Icons
+   ========================================================================== */
+.nav-icon {
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-icon:hover {
+  transform: translateY(-1px);
+}
+
+.badge-cart-count,
+.badge-wishlist-count {
+  font-size: 0.72rem !important;
+  font-weight: 700;
+  padding: 0.3em 0.55em !important;
+  border: 2px solid #ffffff;
+  min-width: 20px;
+}
+
+.badge-cart-count {
+  background-color: var(--nc-primary) !important;
+  color: #ffffff !important;
+}
+
+.badge-wishlist-count {
+  background-color: var(--nc-danger) !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   Skeleton Shimmer Loading Placeholders
+   ========================================================================== */
+.skeleton-card {
+  border-radius: var(--nc-radius);
+  border: 1px solid var(--nc-border);
+  overflow: hidden;
+  background: #ffffff;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes skeletonShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-image {
+  height: 240px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.skeleton-line {
+  height: 16px;
+  margin-bottom: 0.6rem;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+.skeleton-line.price {
+  height: 22px;
+  width: 40%;
+  margin: 0.8rem auto 0;
+}
+
+/* ==========================================================================
+   Toast Notification System
+   ========================================================================== */
+#nc-toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.nc-toast {
+  pointer-events: auto;
+  min-width: 300px;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: var(--nc-radius);
+  box-shadow: var(--nc-shadow-lg);
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  border-left: 5px solid var(--nc-primary);
+  animation: toastSlideIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nc-toast.error {
+  border-left-color: var(--nc-danger);
+}
+
+.nc-toast.warning {
+  border-left-color: var(--nc-warning);
+}
+
+.nc-toast.info {
+  border-left-color: #17a2b8;
+}
+
+.nc-toast-icon {
+  font-size: 1.3rem;
+  margin-right: 12px;
+  color: var(--nc-primary);
+}
+
+.nc-toast.error .nc-toast-icon {
+  color: var(--nc-danger);
+}
+
+.nc-toast.warning .nc-toast-icon {
+  color: var(--nc-warning);
+}
+
+.nc-toast-content {
+  flex-grow: 1;
+}
+
+.nc-toast-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--nc-dark);
+  margin-bottom: 2px;
+}
+
+.nc-toast-message {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+.nc-toast-close {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  color: #adb5bd;
+  cursor: pointer;
+  padding: 0 4px;
+  margin-left: 10px;
+}
+
+.nc-toast-close:hover {
+  color: var(--nc-dark);
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================================================
+   Shopping Cart Offcanvas Drawer
+   ========================================================================== */
+.offcanvas-cart {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 420px !important;
+  max-width: 100vw !important;
+  height: 100vh !important;
+  background-color: #ffffff !important;
+  z-index: 1060 !important;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2) !important;
+  transform: translateX(100%) !important;
+  transition: transform 0.3s ease-in-out !important;
+  display: flex !important;
+  flex-direction: column !important;
+  visibility: hidden;
+}
+
+.offcanvas-cart.show {
+  transform: translateX(0) !important;
+  visibility: visible !important;
+}
+
+.offcanvas-backdrop-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.offcanvas-backdrop-custom.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 576px) {
+  .offcanvas-cart {
+    width: 100% !important;
+  }
+}
+
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--nc-border);
+}
+
+.cart-item-img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--nc-border);
+  margin-right: 12px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--nc-dark);
+  margin-bottom: 3px;
+}
+
+.cart-item-meta {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-bottom: 6px;
+}
+
+.cart-qty-control {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--nc-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cart-qty-btn {
+  background: #f8f9fa;
+  border: none;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cart-qty-btn:hover {
+  background: #e9ecef;
+}
+
+.cart-qty-val {
+  padding: 0 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.cart-item-remove {
+  color: #adb5bd;
+  cursor: pointer;
+  padding: 6px;
+  border: none;
+  background: transparent;
+  transition: color 0.15s;
+}
+
+.cart-item-remove:hover {
+  color: var(--nc-danger);
+}
+
+.cart-drawer-footer {
+  background: #ffffff;
+  border-top: 2px solid var(--nc-border);
+  padding: 16px;
+}
+
+.cart-summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #495057;
+}
+
+.cart-summary-line.total {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--nc-dark);
+  border-top: 1px dashed var(--nc-border);
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+/* ==========================================================================
+   Quick View Modal
+   ========================================================================== */
+.quick-view-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--nc-radius);
+  border: 1px solid var(--nc-border);
+}
+
+/* ==========================================================================
+   Checkout & Order Confirmation
+   ========================================================================== */
+.order-success-icon {
+  width: 72px;
+  height: 72px;
+  background-color: rgba(89, 171, 110, 0.15);
+  color: var(--nc-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin: 0 auto 1.2rem;
+}
+
+.order-id-badge {
+  background: #eef7f1;
+  color: var(--nc-primary-hover);
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+/* Category Filter Active Pill */
+.category-filter-item.active {
+  font-weight: 700 !important;
+  color: var(--nc-primary) !important;
+}
+
+.category-filter-item {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.category-filter-item:hover {
+  color: var(--nc-primary);
+}
+
+/* Empty State Box */
+.empty-state-box {
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background: #fafafa;
+  border-radius: var(--nc-radius);
+  border: 1px dashed #ced4da;
+  margin: 2rem 0;
+}
+
+.empty-state-box i {
+  font-size: 3rem;
+  color: #adb5bd;
+  margin-bottom: 1rem;
+}

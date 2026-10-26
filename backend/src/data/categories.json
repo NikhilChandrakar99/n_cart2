@@ -1,0 +1,42 @@
+[
+  {
+    "id": "cat-watches",
+    "name": "Watches",
+    "slug": "watches",
+    "description": "Smart watches, chronographs, and luxury timepieces",
+    "image": "assets/img/category_img_01.jpg",
+    "itemCount": 3
+  },
+  {
+    "id": "cat-shoes",
+    "name": "Shoes",
+    "slug": "shoes",
+    "description": "Athletic sneakers, running footwear, and boots",
+    "image": "assets/img/category_img_02.jpg",
+    "itemCount": 3
+  },
+  {
+    "id": "cat-accessories",
+    "name": "Accessories",
+    "slug": "accessories",
+    "description": "Bags, torches, eyewear, and essential daily gear",
+    "image": "assets/img/category_img_03.jpg",
+    "itemCount": 4
+  },
+  {
+    "id": "cat-sportswear",
+    "name": "Sportswear",
+    "slug": "sportswear",
+    "description": "Breathable gym wear, hoodies, and jackets",
+    "image": "assets/img/shop_04.jpg",
+    "itemCount": 3
+  },
+  {
+    "id": "cat-gadgets",
+    "name": "Gadgets",
+    "slug": "gadgets",
+    "description": "Cameras, portable electronics, and smart devices",
+    "image": "assets/img/feature_prod_03.jpg",
+    "itemCount": 1
+  }
+]

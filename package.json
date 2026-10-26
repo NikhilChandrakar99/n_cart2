@@ -1,0 +1,28 @@
+{
+  "name": "n-cart",
+  "version": "1.0.0",
+  "description": "N_cart eCommerce - Full-Stack Application for CodeRabbit & Qodo Testing",
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "dev": "nodemon backend/src/server.js",
+    "test": "npm --prefix backend test",
+    "test:unit": "npm --prefix backend test -- tests/unit",
+    "test:integration": "npm --prefix backend test -- tests/integration",
+    "test:coverage": "npm --prefix backend run test:coverage",
+    "test:e2e": "playwright test",
+    "test:all": "npm test && npm run test:e2e",
+    "postinstall": "npm --prefix backend install"
+  },
+  "keywords": [
+    "ecommerce",
+    "fullstack",
+    "testing",
+    "coderabbit",
+    "qodo"
+  ],
+  "author": "N_cart Team",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
+}

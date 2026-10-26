@@ -1,0 +1,488 @@
+[
+  {
+    "id": "prod-001",
+    "name": "DNM Hammer Torch",
+    "slug": "dnm-hammer-torch",
+    "price": 240,
+    "category": "accessories",
+    "rating": 4.8,
+    "reviews": 24,
+    "featured": true,
+    "inStock": true,
+    "stock": 45,
+    "image": "assets/img/feature_prod_01.jpg",
+    "images": [
+      "assets/img/feature_prod_01.jpg",
+      "assets/img/product_single_01.jpg",
+      "assets/img/product_single_02.jpg"
+    ],
+    "description": "A high-harden alloy safety hammer is attached to the flashlight's left side, and a knife is attached to the right side of the head. In an emergency, it can be used for safety. 4 lighting settings: strong light, low light, strobe, and side light. This torch has a COB light and is equipped to handle all of your lighting requirements.",
+    "sizes": [
+      "Standard"
+    ],
+    "colors": [
+      "Black",
+      "Silver"
+    ],
+    "specifications": [
+      "High-harden alloy casing",
+      "COB emergency side light",
+      "Water-resistant IPX6 rating",
+      "USB rechargeable 3000mAh battery"
+    ],
+    "createdAt": "2026-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "prod-002",
+    "name": "Noise Colorfit Icon 2 1.8''",
+    "slug": "noise-colorfit-icon-2",
+    "price": 480,
+    "category": "watches",
+    "rating": 4.9,
+    "reviews": 48,
+    "featured": true,
+    "inStock": true,
+    "stock": 30,
+    "image": "assets/img/feature_prod_02.jpg",
+    "images": [
+      "assets/img/feature_prod_02.jpg",
+      "assets/img/product_single_04.jpg",
+      "assets/img/product_single_05.jpg"
+    ],
+    "description": "Experience the epitome of smart watch technology with the beatXP Evoke Neo. Boasting an impressive 1.43\" Super AMOLED Display with an Always On Display feature, this watch offers a 60Hz refresh rate and a peak brightness of 800 Nits.",
+    "sizes": [
+      "42mm",
+      "46mm"
+    ],
+    "colors": [
+      "Midnight Black",
+      "Silver Grey",
+      "Deep Blue"
+    ],
+    "specifications": [
+      "1.43\" Super AMOLED Display",
+      "Bluetooth calling with noise reduction",
+      "Health tracking: SpO2, Heart Rate, Sleep Monitor",
+      "Up to 7 days battery life"
+    ],
+    "createdAt": "2026-01-16T11:30:00.000Z"
+  },
+  {
+    "id": "prod-003",
+    "name": "Mini 11 Instant Camera (Grey)",
+    "slug": "mini-11-instant-camera-grey",
+    "price": 360,
+    "category": "gadgets",
+    "rating": 4.7,
+    "reviews": 74,
+    "featured": true,
+    "inStock": true,
+    "stock": 18,
+    "image": "assets/img/feature_prod_03.jpg",
+    "images": [
+      "assets/img/feature_prod_03.jpg",
+      "assets/img/product_single_06.jpg",
+      "assets/img/product_single_07.jpg"
+    ],
+    "description": "In The Box: 1 Instant Camera, 10 x 1 Film Pack, Album, Fridge Magnet, Instax Bunting, Batteries, Manual. Produces credit-card-sized prints with high-performance flash and selfie mode.",
+    "sizes": [
+      "Compact"
+    ],
+    "colors": [
+      "Charcoal Grey",
+      "Blush Pink",
+      "Sky Blue"
+    ],
+    "specifications": [
+      "Automatic exposure control",
+      "One-touch Selfie mode",
+      "Credit-card size photo output",
+      "Takes 2x AA batteries"
+    ],
+    "createdAt": "2026-01-18T14:15:00.000Z"
+  },
+  {
+    "id": "prod-004",
+    "name": "Classic Leather Chronograph",
+    "slug": "classic-leather-chronograph",
+    "price": 250,
+    "category": "watches",
+    "rating": 4.5,
+    "reviews": 18,
+    "featured": false,
+    "inStock": true,
+    "stock": 25,
+    "image": "assets/img/shop_01.jpg",
+    "images": [
+      "assets/img/shop_01.jpg",
+      "assets/img/product_single_08.jpg"
+    ],
+    "description": "A timeless analog chronograph crafted with genuine top-grain leather straps and a stainless steel bezel. Water resistant up to 50 meters.",
+    "sizes": [
+      "40mm",
+      "44mm"
+    ],
+    "colors": [
+      "Tan Leather",
+      "Black Leather"
+    ],
+    "specifications": [
+      "Japanese quartz movement",
+      "Genuine leather strap",
+      "5 ATM water resistance",
+      "Scratch-resistant mineral crystal"
+    ],
+    "createdAt": "2026-01-20T09:00:00.000Z"
+  },
+  {
+    "id": "prod-005",
+    "name": "Pro Runner Athletic Sneakers",
+    "slug": "pro-runner-athletic-sneakers",
+    "price": 180,
+    "category": "shoes",
+    "rating": 4.6,
+    "reviews": 32,
+    "featured": false,
+    "inStock": true,
+    "stock": 50,
+    "image": "assets/img/shop_02.jpg",
+    "images": [
+      "assets/img/shop_02.jpg",
+      "assets/img/product_single_09.jpg"
+    ],
+    "description": "Lightweight engineered knit sneakers designed for distance running and gym workouts. Responsive foam midsole gives unmatched energy return.",
+    "sizes": [
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "colors": [
+      "Pure White",
+      "Jet Black",
+      "Volt Green"
+    ],
+    "specifications": [
+      "Breathable engineered mesh",
+      "High-rebound EVA cushioning",
+      "Durable rubber outsole with multi-directional grip",
+      "Padded collar for ankle comfort"
+    ],
+    "createdAt": "2026-01-22T12:00:00.000Z"
+  },
+  {
+    "id": "prod-006",
+    "name": "Urban Explorer Crossbody Bag",
+    "slug": "urban-explorer-crossbody-bag",
+    "price": 120,
+    "category": "accessories",
+    "rating": 4.3,
+    "reviews": 15,
+    "featured": false,
+    "inStock": true,
+    "stock": 35,
+    "image": "assets/img/shop_03.jpg",
+    "images": [
+      "assets/img/shop_03.jpg",
+      "assets/img/product_single_10.jpg"
+    ],
+    "description": "Compact, durable crossbody bag engineered with ballistic nylon and water-repellent zippers. Holds a 10-inch tablet, phone, keys, and daily EDC.",
+    "sizes": [
+      "Standard"
+    ],
+    "colors": [
+      "Slate Grey",
+      "Midnight Black",
+      "Olive Drab"
+    ],
+    "specifications": [
+      "1000D Cordura nylon",
+      "YKK weather-sealed zippers",
+      "Fleece-lined device pocket",
+      "Quick-release magnetic buckle"
+    ],
+    "createdAt": "2026-01-25T15:20:00.000Z"
+  },
+  {
+    "id": "prod-007",
+    "name": "ActiveWear Breathable Tee",
+    "slug": "activewear-breathable-tee",
+    "price": 45,
+    "category": "sportswear",
+    "rating": 4.7,
+    "reviews": 52,
+    "featured": false,
+    "inStock": true,
+    "stock": 80,
+    "image": "assets/img/shop_04.jpg",
+    "images": [
+      "assets/img/shop_04.jpg",
+      "assets/img/product_single_01.jpg"
+    ],
+    "description": "Ultra-soft, moisture-wicking performance shirt designed for high-intensity training, yoga, and warm-weather leisure.",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Black",
+      "White",
+      "Navy",
+      "Heather Grey"
+    ],
+    "specifications": [
+      "88% Polyester, 12% Spandex",
+      "4-way stretch fabric",
+      "Anti-odor antimicrobial treatment",
+      "Flatlock seams prevent chafing"
+    ],
+    "createdAt": "2026-01-28T16:00:00.000Z"
+  },
+  {
+    "id": "prod-008",
+    "name": "Performance Training Hoodie",
+    "slug": "performance-training-hoodie",
+    "price": 85,
+    "category": "sportswear",
+    "rating": 4.4,
+    "reviews": 29,
+    "featured": false,
+    "inStock": true,
+    "stock": 40,
+    "image": "assets/img/shop_05.jpg",
+    "images": [
+      "assets/img/shop_05.jpg",
+      "assets/img/product_single_02.jpg"
+    ],
+    "description": "Technical pullover hoodie featuring thermal fleece lining, thumbholes, and a zippered kangaroo pocket for secure storage.",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Charcoal",
+      "Dark Forest",
+      "Navy Blue"
+    ],
+    "specifications": [
+      "Thermal fleece bonded fabric",
+      "Concealed zipper pocket",
+      "Fitted hood with toggle adjusters",
+      "Ribbed cuffs and hem"
+    ],
+    "createdAt": "2026-01-30T10:45:00.000Z"
+  },
+  {
+    "id": "prod-009",
+    "name": "Polarized UV Aviator Sunglasses",
+    "slug": "polarized-uv-aviator-sunglasses",
+    "price": 95,
+    "category": "accessories",
+    "rating": 4.8,
+    "reviews": 41,
+    "featured": false,
+    "inStock": true,
+    "stock": 60,
+    "image": "assets/img/shop_06.jpg",
+    "images": [
+      "assets/img/shop_06.jpg",
+      "assets/img/product_single_03.jpg"
+    ],
+    "description": "Classic aviator styling with 100% UV400 polarized gradient lenses and ultra-light titanium alloy frames.",
+    "sizes": [
+      "Standard"
+    ],
+    "colors": [
+      "Gold / Green",
+      "Gunmetal / Smoke",
+      "Silver / Blue"
+    ],
+    "specifications": [
+      "UV400 Category 3 polarized lenses",
+      "Lightweight alloy frame",
+      "Silicone nose pads with air-cushion",
+      "Includes hard case and microfiber cleaning cloth"
+    ],
+    "createdAt": "2026-02-02T13:10:00.000Z"
+  },
+  {
+    "id": "prod-010",
+    "name": "All-Terrain Hiking Boots",
+    "slug": "all-terrain-hiking-boots",
+    "price": 210,
+    "category": "shoes",
+    "rating": 4.9,
+    "reviews": 63,
+    "featured": false,
+    "inStock": true,
+    "stock": 20,
+    "image": "assets/img/shop_07.jpg",
+    "images": [
+      "assets/img/shop_07.jpg",
+      "assets/img/product_single_04.jpg"
+    ],
+    "description": "Rugged waterproof hiking boots engineered with Gore-Tex lining and Vibram rubber lug outsoles for maximum traction on muddy or rocky trails.",
+    "sizes": [
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "colors": [
+      "Earth Brown",
+      "Graphite Grey"
+    ],
+    "specifications": [
+      "Waterproof breathable membrane",
+      "Vibram high-traction compound",
+      "Reinforced rubber toe cap",
+      "Ortholite moisture-managing insole"
+    ],
+    "createdAt": "2026-02-05T08:30:00.000Z"
+  },
+  {
+    "id": "prod-011",
+    "name": "Minimalist Smart Fitness Band",
+    "slug": "minimalist-smart-fitness-band",
+    "price": 130,
+    "category": "watches",
+    "rating": 4.2,
+    "reviews": 19,
+    "featured": false,
+    "inStock": true,
+    "stock": 55,
+    "image": "assets/img/shop_08.jpg",
+    "images": [
+      "assets/img/shop_08.jpg",
+      "assets/img/product_single_05.jpg"
+    ],
+    "description": "Sleek fitness tracker band with curved OLED screen, continuous heart-rate monitoring, 30 sport modes, and 14-day battery life.",
+    "sizes": [
+      "Standard"
+    ],
+    "colors": [
+      "Obsidian Black",
+      "Sage Green",
+      "Rose Gold"
+    ],
+    "specifications": [
+      "1.1\" AMOLED color display",
+      "50m water resistance (5 ATM)",
+      "Continuous SpO2 and pulse monitoring",
+      "Magnetic quick charging"
+    ],
+    "createdAt": "2026-02-08T11:00:00.000Z"
+  },
+  {
+    "id": "prod-012",
+    "name": "Water-Resistant Commuter Backpack",
+    "slug": "water-resistant-commuter-backpack",
+    "price": 115,
+    "category": "accessories",
+    "rating": 4.6,
+    "reviews": 37,
+    "featured": false,
+    "inStock": true,
+    "stock": 28,
+    "image": "assets/img/shop_09.jpg",
+    "images": [
+      "assets/img/shop_09.jpg",
+      "assets/img/product_single_06.jpg"
+    ],
+    "description": "25-liter commuter pack with dedicated 16-inch laptop compartment, hidden passport pocket, and luggage pass-through strap.",
+    "sizes": [
+      "25 Liters"
+    ],
+    "colors": [
+      "Matte Black",
+      "Heather Grey",
+      "Navy"
+    ],
+    "specifications": [
+      "Waterproof tarpaulin and 600D polyester",
+      "Padded 16\" laptop and tablet sleeve",
+      "Ergonomic airflow back panel",
+      "Anti-theft hidden rear pocket"
+    ],
+    "createdAt": "2026-02-12T14:40:00.000Z"
+  },
+  {
+    "id": "prod-013",
+    "name": "Slip-On Comfort Walking Shoes",
+    "slug": "slip-on-comfort-walking-shoes",
+    "price": 90,
+    "category": "shoes",
+    "rating": 4.5,
+    "reviews": 22,
+    "featured": false,
+    "inStock": true,
+    "stock": 42,
+    "image": "assets/img/shop_10.jpg",
+    "images": [
+      "assets/img/shop_10.jpg",
+      "assets/img/product_single_07.jpg"
+    ],
+    "description": "Hands-free easy slip-on walking shoes with memory foam insoles and flexible stretch-knit upper for all-day comfort.",
+    "sizes": [
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "colors": [
+      "Black",
+      "Light Grey",
+      "Navy Blue"
+    ],
+    "specifications": [
+      "Stretch knit upper adapts to foot shape",
+      "Air-cooled memory foam cushioned insole",
+      "Flexible traction outsole",
+      "Machine washable"
+    ],
+    "createdAt": "2026-02-15T09:15:00.000Z"
+  },
+  {
+    "id": "prod-014",
+    "name": "Lightweight Windbreaker Jacket",
+    "slug": "lightweight-windbreaker-jacket",
+    "price": 140,
+    "category": "sportswear",
+    "rating": 4.7,
+    "reviews": 34,
+    "featured": false,
+    "inStock": true,
+    "stock": 35,
+    "image": "assets/img/shop_11.jpg",
+    "images": [
+      "assets/img/shop_11.jpg",
+      "assets/img/product_single_08.jpg"
+    ],
+    "description": "Packable, windproof and water-resistant shell jacket that packs down into its own chest pocket. Ideal for running, cycling, and travel.",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Neon Yellow / Black",
+      "Charcoal / Teal",
+      "All Black"
+    ],
+    "specifications": [
+      "DWR-coated ripstop nylon",
+      "Reflective accents for 360-degree night visibility",
+      "Vented back panel for temperature regulation",
+      "Packs into internal zippered pocket"
+    ],
+    "createdAt": "2026-02-18T16:25:00.000Z"
+  }
+]
