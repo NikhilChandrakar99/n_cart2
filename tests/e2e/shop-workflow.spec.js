@@ -168,10 +168,11 @@ test.describe('N_cart Full-Stack E2E Shopping & Customer Workflows', () => {
     await submitBtn.click();
 
     // Fill valid data
-    await page.fill('#name', 'Alex Hunter');
-    await page.fill('#email', 'alex@example.com');
-    await page.fill('#subject', 'Wholesale Inquiry');
-    await page.fill('#message', 'I am interested in ordering in bulk for our retail stores.');
+    const contactForm = page.locator('form.col-md-9.m-auto');
+    await contactForm.getByLabel('Name').fill('Alex Hunter');
+    await contactForm.getByLabel('Email').fill('alex@example.com');
+    await contactForm.getByLabel('Subject').fill('Wholesale Inquiry');
+    await contactForm.getByLabel('Message').fill('I am interested in ordering in bulk for our retail stores.');
 
     await submitBtn.click();
 
