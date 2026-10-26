@@ -16,7 +16,7 @@ const config = {
   backendRoot,
   dataDir: path.resolve(backendRoot, process.env.DATA_DIR || 'src/data'),
   staticDir: workspaceRoot,
-  taxRate: 0.08, // 8% sales tax
+taxRate: 0.18, // 18% sales tax
   shippingFlatRate: 15.00,
   freeShippingThreshold: 150.00
 };
