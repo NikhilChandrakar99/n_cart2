@@ -1225,5 +1225,244 @@
         "note": "Order successfully created."
       }
     ]
+  },
+  {
+    "id": "ORD-20261027-ZYMW",
+    "orderNumber": "ORD-20261027-ZYMW",
+    "customer": {
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "phone": "+1 555-0199",
+      "address": "456 Elm Street",
+      "city": "Seattle",
+      "postalCode": "98101"
+    },
+    "items": [
+      {
+        "id": "ci-mvqe1mqw-cpso",
+        "productId": "prod-001",
+        "name": "DNM Hammer Torch",
+        "price": 240,
+        "image": "assets/img/feature_prod_01.jpg",
+        "size": "Standard",
+        "color": "Default",
+        "quantity": 1,
+        "subtotal": 240
+      }
+    ],
+    "financials": {
+      "itemCount": 1,
+      "subtotal": 240,
+      "discount": 0,
+      "shipping": 0,
+      "tax": 19.2,
+      "total": 259.2
+    },
+    "paymentMethod": "cod",
+    "paymentStatus": "pending_payment",
+    "status": "pending",
+    "notes": "Leave at front door",
+    "createdAt": "2026-10-27T07:52:53.878Z",
+    "statusHistory": [
+      {
+        "status": "pending",
+        "timestamp": "2026-10-27T07:52:53.878Z",
+        "note": "Order successfully created."
+      }
+    ]
+  },
+  {
+    "id": "ORD-20261027-QMM5",
+    "orderNumber": "ORD-20261027-QMM5",
+    "customer": {
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "phone": "+1 555-0199",
+      "address": "456 Elm Street",
+      "city": "Seattle",
+      "postalCode": "98101"
+    },
+    "items": [
+      {
+        "id": "ci-mvqe1mtj-mnt4",
+        "productId": "prod-001",
+        "name": "DNM Hammer Torch",
+        "price": 240,
+        "image": "assets/img/feature_prod_01.jpg",
+        "size": "Standard",
+        "color": "Default",
+        "quantity": 1,
+        "subtotal": 240
+      }
+    ],
+    "financials": {
+      "itemCount": 1,
+      "subtotal": 240,
+      "discount": 0,
+      "shipping": 0,
+      "tax": 19.2,
+      "total": 259.2
+    },
+    "paymentMethod": "cod",
+    "paymentStatus": "pending_payment",
+    "status": "delivered",
+    "notes": "",
+    "createdAt": "2026-10-27T07:52:53.970Z",
+    "statusHistory": [
+      {
+        "status": "pending",
+        "timestamp": "2026-10-27T07:52:53.970Z",
+        "note": "Order successfully created."
+      },
+      {
+        "status": "delivered",
+        "previousStatus": "pending",
+        "timestamp": "2026-10-27T07:52:53.985Z",
+        "note": "Status changed from pending to delivered"
+      }
+    ],
+    "updatedAt": "2026-10-27T07:52:53.985Z"
+  },
+  {
+    "id": "ORD-20261027-3S89",
+    "orderNumber": "ORD-20261027-3S89",
+    "customer": {
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "phone": "+1 555-0199",
+      "address": "456 Elm Street",
+      "city": "Seattle",
+      "postalCode": "98101"
+    },
+    "items": [
+      {
+        "id": "ci-mvqe1muu-v581",
+        "productId": "prod-002",
+        "name": "Noise Colorfit Icon 2 1.8''",
+        "price": 480,
+        "image": "assets/img/feature_prod_02.jpg",
+        "size": "Standard",
+        "color": "Default",
+        "quantity": 1,
+        "subtotal": 480
+      }
+    ],
+    "financials": {
+      "itemCount": 1,
+      "subtotal": 480,
+      "discount": 0,
+      "shipping": 0,
+      "tax": 38.4,
+      "total": 518.4
+    },
+    "paymentMethod": "cod",
+    "paymentStatus": "pending_payment",
+    "status": "pending",
+    "notes": "",
+    "createdAt": "2026-10-27T07:52:54.018Z",
+    "statusHistory": [
+      {
+        "status": "pending",
+        "timestamp": "2026-10-27T07:52:54.018Z",
+        "note": "Order successfully created."
+      }
+    ]
+  },
+  {
+    "id": "ORD-20261027-7QV3",
+    "orderNumber": "ORD-20261027-7QV3",
+    "customer": {
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "phone": "+1 555-0199",
+      "address": "456 Elm Street",
+      "city": "Seattle",
+      "postalCode": "98101"
+    },
+    "items": [
+      {
+        "id": "ci-mvqe1mvx-xfof",
+        "productId": "prod-003",
+        "name": "Mini 11 Instant Camera (Grey)",
+        "price": 360,
+        "image": "assets/img/feature_prod_03.jpg",
+        "size": "Standard",
+        "color": "Default",
+        "quantity": 1,
+        "subtotal": 360
+      }
+    ],
+    "financials": {
+      "itemCount": 1,
+      "subtotal": 360,
+      "discount": 0,
+      "shipping": 0,
+      "tax": 28.8,
+      "total": 388.8
+    },
+    "paymentMethod": "cod",
+    "paymentStatus": "pending_payment",
+    "status": "processing",
+    "notes": "",
+    "createdAt": "2026-10-27T07:52:54.057Z",
+    "statusHistory": [
+      {
+        "status": "pending",
+        "timestamp": "2026-10-27T07:52:54.057Z",
+        "note": "Order successfully created."
+      },
+      {
+        "status": "processing",
+        "previousStatus": "pending",
+        "timestamp": "2026-10-27T07:52:54.069Z",
+        "note": "Payment verified and packing started."
+      }
+    ],
+    "updatedAt": "2026-10-27T07:52:54.068Z"
+  },
+  {
+    "id": "ORD-20261027-UNCC",
+    "orderNumber": "ORD-20261027-UNCC",
+    "customer": {
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "phone": "+1 555-0199",
+      "address": "456 Elm Street",
+      "city": "Seattle",
+      "postalCode": "98101"
+    },
+    "items": [
+      {
+        "id": "ci-mvqe1mx4-gfgn",
+        "productId": "prod-001",
+        "name": "DNM Hammer Torch",
+        "price": 240,
+        "image": "assets/img/feature_prod_01.jpg",
+        "size": "Standard",
+        "color": "Default",
+        "quantity": 1,
+        "subtotal": 240
+      }
+    ],
+    "financials": {
+      "itemCount": 1,
+      "subtotal": 240,
+      "discount": 0,
+      "shipping": 0,
+      "tax": 19.2,
+      "total": 259.2
+    },
+    "paymentMethod": "cod",
+    "paymentStatus": "pending_payment",
+    "status": "pending",
+    "notes": "",
+    "createdAt": "2026-10-27T07:52:54.098Z",
+    "statusHistory": [
+      {
+        "status": "pending",
+        "timestamp": "2026-10-27T07:52:54.098Z",
+        "note": "Order successfully created."
+      }
+    ]
   }
 ]
