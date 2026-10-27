@@ -45,6 +45,52 @@ describe('Order Management API Tests', () => {
     expect(cartRes.body.data.items).toHaveLength(0);
   });
 
+
+
+
+
+  
+  it('POST /api/orders - should reject an invalid customer email', async () => {
+    const res = await request(app)
+      .post('/api/orders')
+      .send({
+        customer: { ...customer, email: 'invalid-email' }
+      });
+
+    expect(res.status).toBe(400);
+    expect(res.body.errorCode).toBe('VALIDATION_ERROR');
+  });
+
+  it('POST /api/orders - should reject a customer name shorter than 2 characters', async () => {
+    const res = await request(app)
+      .post('/api/orders')
+      .send({
+        customer: { ...customer, name: 'A' }
+      });
+
+    expect(res.status).toBe(400);
+    expect(res.body.errorCode).toBe('VALIDATION_ERROR');
+  });
+
+  it('PATCH /api/orders/:id/status - should reject an invalid status transition', async () => {
+    await request(app).post('/api/cart')
+      .send({ productId: 'prod-001', quantity: 1 });
+
+    const orderRes = await request(app)
+      .post('/api/orders')
+      .send({ customer });
+
+    const orderId = orderRes.body.data.id;
+
+    const res = await request(app)
+      .patch(`/api/orders/${orderId}/status`)
+      .send({ status: 'delivered' });
+
+    expect(res.status).toBe(400);
+  });
+
+
+  
   it('GET /api/orders/:id - should fetch order details by order ID', async () => {
     // Add item and place order
     await request(app).post('/api/cart').send({ productId: 'prod-002', quantity: 1 });
