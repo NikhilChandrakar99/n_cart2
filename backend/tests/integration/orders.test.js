@@ -84,4 +84,69 @@ describe('Order Management API Tests', () => {
     expect(invalidRes.status).toBe(400);
     expect(invalidRes.body.errorCode).toBe('VALIDATION_ERROR');
   });
+
+
+
+
+
+  it('POST /api/orders - should not trust client-supplied product prices', async () => {
+  const res = await request(app)
+    .post('/api/orders')
+    .send({
+      customer,
+      paymentMethod: 'cod',
+      items: [
+        {
+          productId: 'prod-001',
+          name: 'Test Product',
+          price: 1,
+          quantity: 1
+        }
+      ]
+    });
+
+  expect(res.status).toBe(201);
+  expect(res.body.data.financials.subtotal).toBeGreaterThan(1);
+});
+
+
+it('POST /api/orders - should not mark an order as paid for an invalid payment method', async () => {
+  await request(app)
+    .post('/api/cart')
+    .send({ productId: 'prod-001', quantity: 1 });
+
+  const res = await request(app)
+    .post('/api/orders')
+    .send({
+      customer,
+      paymentMethod: 'invalid_method'
+    });
+
+  expect(res.status).toBe(400);
+  expect(res.body.errorCode).toBe('VALIDATION_ERROR');
+});
+
+it('PATCH /api/orders/:id/status - should reject reverting a delivered order to pending', async () => {
+  await request(app)
+    .post('/api/cart')
+    .send({ productId: 'prod-001', quantity: 1 });
+
+  const orderRes = await request(app)
+    .post('/api/orders')
+    .send({ customer });
+
+  const orderId = orderRes.body.data.id;
+
+  const deliveredRes = await request(app)
+    .patch(`/api/orders/${orderId}/status`)
+    .send({ status: 'delivered' });
+
+  expect(deliveredRes.status).toBe(200);
+
+  const revertRes = await request(app)
+    .patch(`/api/orders/${orderId}/status`)
+    .send({ status: 'pending' });
+
+  expect(revertRes.status).toBe(400);
+});
 });
