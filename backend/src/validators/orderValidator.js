@@ -6,9 +6,14 @@ const ApiResponse = require('../utils/apiResponse');
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const VALID_ORDER_STATUSES = new Set(['pending', 'processing', 'shipped', 'delivered', 'cancelled']);
+const VALID_PAYMENT_METHODS = new Set(['cod', 'card', 'upi']);
 
 function validateOrderInput(data) {
   const errors = [];
+
+  if (data.paymentMethod !== undefined && !VALID_PAYMENT_METHODS.has(data.paymentMethod)) {
+    errors.push(`Invalid payment method. Allowed: ${Array.from(VALID_PAYMENT_METHODS).join(', ')}`);
+  }
 
   if (!data.customer || typeof data.customer !== 'object') {
     errors.push('Customer information object is required.');
