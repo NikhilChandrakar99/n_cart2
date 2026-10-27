@@ -6,12 +6,12 @@ const ApiResponse = require('../utils/apiResponse');
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const VALID_ORDER_STATUSES = new Set(['pending', 'processing', 'shipped', 'delivered', 'cancelled']);
-const ALLOWED_PAYMENT_METHODS = new Set(['cod', 'card', 'stripe']);
+const ALLOWED_PAYMENT_METHODS = new Set(['cod', 'card', 'stripe', 'upi']);
 
 function validateOrderInput(data) {
   const errors = [];
 
-  if (data.paymentMethod && !ALLOWED_PAYMENT_METHODS.has(String(data.paymentMethod).toLowerCase())) {
+  if (data.paymentMethod !== undefined && !ALLOWED_PAYMENT_METHODS.has(String(data.paymentMethod).toLowerCase())) {
     errors.push(`Invalid payment method. Allowed: ${Array.from(ALLOWED_PAYMENT_METHODS).join(', ')}`);
   }
 
