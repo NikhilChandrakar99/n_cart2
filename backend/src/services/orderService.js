@@ -4,10 +4,18 @@
  */
 
 const { readJsonFile, writeJsonFile } = require('../utils/fileStorage');
-const { calculateCartTotals } = require('../utils/calculations');
+const { calculateCartTotals, roundCurrency } = require('../utils/calculations');
 const CartService = require('./cartService');
+const ProductService = require('./productService');
 
 const ORDERS_FILE = 'orders.json';
+const STATUS_TRANSITIONS = {
+  pending: ['processing', 'cancelled'],
+  processing: ['shipped', 'cancelled'],
+  shipped: ['delivered'],
+  delivered: [],
+  cancelled: []
+};
 
 class OrderService {
   /**
@@ -72,7 +80,29 @@ class OrderService {
       createdFromCart = true;
     }
 
-    // Calculate totals securely on server side
+    // Resolve catalog fields for both direct and cart items before calculating totals.
+    itemsToOrder = await Promise.all(itemsToOrder.map(async item => {
+      const product = await ProductService.getProductById(item && item.productId);
+      if (!product) {
+        const err = new Error(`Order item product was not found.`);
+        err.statusCode = 404;
+        err.code = 'PRODUCT_NOT_FOUND';
+        throw err;
+      }
+
+      const qty = Math.max(1, Math.min(99, item.quantity || 1));
+      return {
+        ...item,
+        productId: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        size: item.size || 'Standard',
+        color: item.color || 'Default',
+        quantity: qty,
+        subtotal: roundCurrency(product.price * qty)
+      };
+    }));
     const totals = calculateCartTotals(itemsToOrder);
 
     const orderId = this.generateOrderId();
@@ -90,7 +120,8 @@ class OrderService {
       items: itemsToOrder,
       financials: totals,
       paymentMethod,
-      paymentStatus: paymentMethod === 'cod' ? 'pending_payment' : 'paid',
+      // Selecting a payment method does not verify a payment.
+      paymentStatus: 'pending_payment',
       status: 'pending',
       notes: notes ? notes.trim() : '',
       createdAt: new Date().toISOString(),
@@ -132,6 +163,13 @@ class OrderService {
     const order = orders[index];
     const previousStatus = order.status;
     const cleanStatus = newStatus.toLowerCase();
+
+    if (!STATUS_TRANSITIONS[previousStatus] || !STATUS_TRANSITIONS[previousStatus].includes(cleanStatus)) {
+      const err = new Error(`Cannot change order status from '${previousStatus}' to '${cleanStatus}'.`);
+      err.statusCode = 400;
+      err.code = 'INVALID_STATUS_TRANSITION';
+      throw err;
+    }
 
     order.status = cleanStatus;
     order.updatedAt = new Date().toISOString();

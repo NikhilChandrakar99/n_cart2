@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ORD-20261027-TL9Y",
+    "orderNumber": "ORD-20261027-TL9Y",
+    "customer": {
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "phone": "+1 555-0199",
+      "address": "456 Elm Street",
+      "city": "Seattle",
+      "postalCode": "98101"
+    },
+    "items": [
+      {
+        "productId": "prod-001",
+        "name": "Test Product",
+        "price": 1,
+        "quantity": 1
+      }
+    ],
+    "financials": {
+      "itemCount": 1,
+      "subtotal": 1,
+      "discount": 0,
+      "shipping": 15,
+      "tax": 0.08,
+      "total": 16.08
+    },
+    "paymentMethod": "cod",
+    "paymentStatus": "pending_payment",
+    "status": "pending",
+    "notes": "",
+    "createdAt": "2026-10-27T08:55:36.097Z",
+    "statusHistory": [
+      {
+        "status": "pending",
+        "timestamp": "2026-10-27T08:55:36.097Z",
+        "note": "Order successfully created."
+      }
+    ]
+  }
+]
