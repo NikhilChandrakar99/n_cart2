@@ -6,6 +6,7 @@
 const { readJsonFile, writeJsonFile } = require('../utils/fileStorage');
 const { calculateCartTotals } = require('../utils/calculations');
 const CartService = require('./cartService');
+const ProductService = require('./productService');
 
 const ORDERS_FILE = 'orders.json';
 
@@ -72,6 +73,36 @@ class OrderService {
       createdFromCart = true;
     }
 
+    // Resolve product details for direct items (if any) to ensure trusted pricing
+    let resolvedItems = [];
+    if (directItems && Array.isArray(directItems) && directItems.length > 0) {
+      // Resolve each supplied item against the product catalog
+      resolvedItems = await Promise.all(directItems.map(async (item) => {
+        const product = await ProductService.getProductById(item.productId);
+        if (!product) {
+          const err = new Error(`Product with ID '${item.productId}' not found for order.`);
+          err.statusCode = 404;
+          err.code = 'PRODUCT_NOT_FOUND';
+          throw err;
+        }
+        const qty = Math.max(1, Math.min(99, item.quantity || 1));
+        return {
+          productId: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.image,
+          size: item.size || 'Standard',
+          color: item.color || 'Default',
+          quantity: qty,
+          subtotal: Math.round(product.price * qty * 100) / 100
+        };
+      }));
+    }
+    // If we resolved items from the payload, use them; otherwise fall back to cart items
+    if (resolvedItems.length > 0) {
+      itemsToOrder = resolvedItems;
+      createdFromCart = false;
+    }
     // Calculate totals securely on server side
     const totals = calculateCartTotals(itemsToOrder);
 
@@ -132,6 +163,14 @@ class OrderService {
     const order = orders[index];
     const previousStatus = order.status;
     const cleanStatus = newStatus.toLowerCase();
+
+    const TERMINAL_STATUSES = new Set(['delivered', 'cancelled']);
+    if (TERMINAL_STATUSES.has(previousStatus) && cleanStatus !== previousStatus) {
+      const err = new Error(`Cannot transition order from terminal status '${previousStatus}' to '${cleanStatus}'.`);
+      err.statusCode = 400;
+      err.code = 'INVALID_STATUS_TRANSITION';
+      throw err;
+    }
 
     order.status = cleanStatus;
     order.updatedAt = new Date().toISOString();

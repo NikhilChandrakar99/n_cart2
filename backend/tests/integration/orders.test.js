@@ -106,7 +106,7 @@ describe('Order Management API Tests', () => {
     });
 
   expect(res.status).toBe(201);
-  expect(res.body.data.financials.subtotal).toBeGreaterThan(1);
+  expect(res.body.data.financials.subtotal).toBe(240);
 });
 
 
@@ -148,5 +148,31 @@ it('PATCH /api/orders/:id/status - should reject reverting a delivered order to 
     .send({ status: 'pending' });
 
   expect(revertRes.status).toBe(400);
+  expect(revertRes.body.errorCode).toBe('INVALID_STATUS_TRANSITION');
+});
+
+it('PATCH /api/orders/:id/status - should reject transitioning a cancelled order to shipped', async () => {
+  await request(app)
+    .post('/api/cart')
+    .send({ productId: 'prod-001', quantity: 1 });
+
+  const orderRes = await request(app)
+    .post('/api/orders')
+    .send({ customer });
+
+  const orderId = orderRes.body.data.id;
+
+  const cancelledRes = await request(app)
+    .patch(`/api/orders/${orderId}/status`)
+    .send({ status: 'cancelled' });
+
+  expect(cancelledRes.status).toBe(200);
+
+  const transitionRes = await request(app)
+    .patch(`/api/orders/${orderId}/status`)
+    .send({ status: 'shipped' });
+
+  expect(transitionRes.status).toBe(400);
+  expect(transitionRes.body.errorCode).toBe('INVALID_STATUS_TRANSITION');
 });
 });
